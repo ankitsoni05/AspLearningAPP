@@ -1,0 +1,20 @@
+﻿@using AspLearningAPP.Models
+@model AspLearningAPP.Models.Movies
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Movie Name :  @Model.MovieName</h2>
+<h2>Release Year : @Model.ReleaseYear</h2>
+<hr />
+
+@*This is bad approach because this requires a typecasting
+    and If I change name from movies to something else then it will not help because of the
+    magic string.
+*@
+<h2>Movie Name : @(((Movies)ViewData["Movies"]).MovieName)</h2>
+<h2>Release Year : @(((Movies)ViewData["Movies"]).ReleaseYear)</h2>
+
+<hr />
+
+
